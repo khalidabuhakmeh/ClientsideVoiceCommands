@@ -1,0 +1,53 @@
+@page
+@model Jarvis.Pages.Index
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Jarvis - Voice Commands</title>
+    <link rel="stylesheet" href="~/css/bulma.min.css"/>
+</head>
+<body>
+<div class="container is-desktop">
+
+    <div class="navbar-brand">
+        <span class="navbar-item">
+            <h1 class="title"> 🔊 Random Image Voice Search </h1>
+            <hr/>
+        </span>
+    </div>
+
+    <div id="clickNotification" class="notification is-warning">
+        Click accept to allow the site to listen to your Microphone and perform commands. Use the <strong>Find me a</strong> trigger phrase.
+        <div class="block">
+            <button type="button" class="button is-primary mt-1" onclick="enable('clickNotification')">
+                <span>👍</span>
+                Accept
+            </button>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <h2 class="title">Found a <span id="imageTitle">...</span></h2>
+            <figure class="image is-4by3">
+                <img id="image" alt="random image" src="https://source.unsplash.com/random/640x480"/>
+            </figure>
+            <div class="notification is-info mt-1">
+                Use the <strong>Find me a</strong> trigger phrase to search.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="~/js/htmx.min.js"></script>
+<script type="text/javascript" src="~/js/artyom.window.min.js"></script>
+<script type="text/javascript" src="~/js/site.js"></script>
+</body>
+</html>
